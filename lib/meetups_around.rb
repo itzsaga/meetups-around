@@ -1,5 +1,2 @@
-require "meetups_around/version"
-
-module MeetupsAround
-  # Your code goes here...
-end
+require_relative "./meetups_around/version"
+require_relative "./meetups_around/cli"
