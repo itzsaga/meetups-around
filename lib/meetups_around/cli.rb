@@ -6,6 +6,7 @@ class MeetupsAround::CLI
     input_zipcode
     input_radius
     list_meetups
+    again?
   end
 
   def input_zipcode
@@ -37,6 +38,12 @@ class MeetupsAround::CLI
     2. 9:00AM - Score Nashville Events, Networking and Workshops - Join us for a "Start your Business" workshop! - 2 Members going
     3. 10:00AM - Paid to Speak Entrepreneurs - How To Get Your Speaking Career Started - 18 Members Going
     HEREDOC
+  end
+
+  def again?
+    puts "Would you like to search again? [Y/N]"
+    input = gets.strip.downcase
+    puts input == "y" || input == "yes" ? self.call : "Goodbye =)"
   end
 
 end
