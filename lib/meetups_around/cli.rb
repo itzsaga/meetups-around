@@ -43,7 +43,7 @@ class MeetupsAround::CLI
   def again?
     puts "Would you like to search again? [Y/N]"
     input = gets.strip.downcase
-    puts input == "y" || input == "yes" ? self.call : "Goodbye =)"
+    puts input == "y" || input == "yes" ? call : "Goodbye =)"
   end
 
 end
