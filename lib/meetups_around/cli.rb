@@ -38,6 +38,7 @@ class MeetupsAround::CLI
     2. 9:00AM - Score Nashville Events, Networking and Workshops - Join us for a "Start your Business" workshop! - 2 Members going
     3. 10:00AM - Paid to Speak Entrepreneurs - How To Get Your Speaking Career Started - 18 Members Going
     HEREDOC
+    @meetups = MeetupsAround::Meetup.today
   end
 
   def again?
