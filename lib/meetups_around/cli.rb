@@ -10,6 +10,12 @@ class MeetupsAround::CLI
   def input
     puts "What zip code would you like to see meetups for?"
     zip_code = gets.strip
+    if /\b\d{5}\b/.match?(zip_code)
+      nil
+    else
+      puts "Please enter a five digit zip code."
+      self.input
+    end
     puts "What radius around that zip code?"
     radius = gets.strip
   end
