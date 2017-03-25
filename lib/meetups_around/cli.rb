@@ -1,6 +1,5 @@
 class MeetupsAround::CLI
     def call
-        @todays_date = 'Saturday, March 25'
         input_zipcode
         input_radius
         list_meetups
