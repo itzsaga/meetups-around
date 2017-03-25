@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
     spec.authors       = ['Seth Alexander']
     spec.email         = ['itz.saga@gmail.com']
 
-    spec.summary       = 'TODO: Write a short summary, because Rubygems requires one.'
-    spec.description   = 'TODO: Write a longer description or delete this line.'
+    spec.summary       = ''
+    spec.description   = ''
     spec.homepage      = 'https://github.com/itzsaga/meetups-around'
 
     # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
