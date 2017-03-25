@@ -3,21 +3,31 @@ class MeetupsAround::CLI
 
   def call
     @todays_date = "Saturday, March 25"
-    input
+    input_zipcode
+    input_radius
     list_meetups
   end
 
-  def input
+  def input_zipcode
     puts "What zip code would you like to see meetups for?"
     zip_code = gets.strip
     if /\b\d{5}\b/.match?(zip_code)
       nil
     else
       puts "Please enter a five digit zip code."
-      self.input
+      self.input_zipcode
     end
-    puts "What radius around that zip code?"
+  end
+
+  def input_radius
+    puts "What radius around that zip code would you like to see meetups for?"
     radius = gets.strip
+    if /\b\d{1,2}\b/.match?(radius)
+      nil
+    else
+      puts "Please enter a radius less than 100."
+      self.input_radius
+    end
   end
 
   def list_meetups
