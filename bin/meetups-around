@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/meetups_around'
+require 'bundler/setup'
+require 'meetups_around'
 
 MeetupsAround::CLI.new.call
