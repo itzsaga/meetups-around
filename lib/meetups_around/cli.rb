@@ -1,10 +1,15 @@
 class MeetupsAround::CLI
   attr_accessor :meetups, :zip_code
     def call
+        @@input = self
         input_zipcode
         input_radius
         list_meetups
         again?
+    end
+
+    def self.input
+      @@input
     end
 
     def input_zipcode

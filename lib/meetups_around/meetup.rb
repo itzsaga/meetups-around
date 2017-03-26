@@ -6,7 +6,7 @@ class MeetupsAround::Meetup
         @meetups = []
         @todays_date = 'Saturday, March 25'
         today = Time.new
-        binding.pry
+        
         if today.strftime('%A, %B %d') != 'Saturday, March 25'
             puts 'There are no more events today.'
         else
