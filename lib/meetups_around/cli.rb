@@ -37,9 +37,10 @@ class MeetupsAround::CLI
 
     def list_meetups
         @meetups = MeetupsAround::Meetup.today
-        # binding.pry
-        meetups.each.with_index(1) do |meetup, i|
-          puts "#{i}. #{meetup.time} - #{meetup.group} - #{meetup.event} - #{meetup.attending}"
+        if @meetups != nil
+          meetups.each.with_index(1) do |meetup, i|
+            puts "#{i}. #{meetup.time} - #{meetup.group} - #{meetup.event} - #{meetup.attending}"
+          end
         end
     end
 

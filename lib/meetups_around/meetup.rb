@@ -3,11 +3,14 @@ class MeetupsAround::Meetup
     attr_reader :todays_date
 
     def self.today
+        html = open("https://www.meetup.com/find/events/?allMeetups=true&radius=#{MeetupsAround::CLI.input.radius.to_i}&userFreeform=#{MeetupsAround::CLI.input.zip_code.to_i}")
+        doc = Nokogiri::HTML(html)
+binding.pry
         @meetups = []
         @todays_date = 'Saturday, March 25'
         today = Time.new
-  binding.pry
-        if today.strftime('%A, %B %d') != 'Saturday, March 25'
+
+        if today.strftime('%A, %B %-d') != doc.search("li.date-indicator").first.text.strip
             puts 'There are no more events today.'
         else
             # I should return all the instances of today's meetups.
@@ -35,5 +38,3 @@ class MeetupsAround::Meetup
         end
     end
 end
-
-# https://www.meetup.com/find/events/?allMeetups=true&radius=10&userFreeform=37201
