@@ -1,34 +1,15 @@
-# MeetupsAround
+# MeetupsAround CLI Gem
+[![Gem Version](https://badge.fury.io/rb/meetups_around.svg)](https://badge.fury.io/rb/meetups_around) [![Build Status](https://travis-ci.org/itzsaga/meetups-around.svg?branch=master)](https://travis-ci.org/itzsaga/meetups-around)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/meetups_around`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to my command line interface (CLI) gem. This gem will allow you to input a zip code and a radius to return all the events happening today within that area.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'meetups_around'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install meetups_around
+You can install this gem via `gem install meetups_around`. The `meetups_around` CLI will be installed and you can run `meetups_around` to get a list of meetups happening right in your command line.
 
 ## Usage
 
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Run `meetups_around` after installing the gem.
 
 ## Contributing ##
 
