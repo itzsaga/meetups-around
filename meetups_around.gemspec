@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
     spec.summary       = 'Scrape events from meetup.com'
     spec.description   = 'A gem to list all events in a given radius from a given zip code for the current day from meetup.com'
     spec.homepage      = 'https://github.com/itzsaga/meetups-around'
+    spec.license       = 'MIT'
 
     # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
     # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -32,6 +33,6 @@ Gem::Specification.new do |spec|
     spec.add_development_dependency 'bundler', '~> 1.14'
     spec.add_development_dependency 'rake', '~> 10.0'
     spec.add_development_dependency 'rspec', '~> 3.0'
-    spec.add_development_dependency 'pry'
-    spec.add_dependency 'nokogiri'
+    spec.add_development_dependency 'pry', '~> 0.14'
+    spec.add_dependency 'nokogiri', '~> 2.9'
 end
