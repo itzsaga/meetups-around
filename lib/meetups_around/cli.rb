@@ -1,5 +1,5 @@
 class MeetupsAround::CLI
-  attr_accessor :meetups
+  attr_accessor :meetups, :zip_code
     def call
         input_zipcode
         input_radius
@@ -9,13 +9,14 @@ class MeetupsAround::CLI
 
     def input_zipcode
         puts 'What zip code would you like to see meetups for?'
-        zip_code = gets.strip
+        @zip_code = gets.strip
         if /\b\d{5}\b/.match?(zip_code)
             nil
         else
             puts 'Please enter a five digit zip code.'
             input_zipcode
         end
+        binding.pry
     end
 
     def input_radius
