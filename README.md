@@ -1,5 +1,5 @@
 # MeetupsAround CLI Gem
-[![Gem Version](https://badge.fury.io/rb/meetups_around.svg)](https://badge.fury.io/rb/meetups_around) [![Build Status](https://travis-ci.org/itzsaga/meetups-around.svg?branch=master)](https://travis-ci.org/itzsaga/meetups-around)
+[![Gem Version](https://badge.fury.io/rb/meetups_around.svg)](https://badge.fury.io/rb/meetups_around)
 
 Welcome to my command line interface (CLI) gem. This gem will allow you to input a zip code and a radius to return all the events happening today within that area.
 
