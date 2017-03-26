@@ -5,36 +5,34 @@ class MeetupsAround::Meetup
     def self.today
         html = open("https://www.meetup.com/find/events/?allMeetups=true&radius=#{MeetupsAround::CLI.input.radius.to_i}&userFreeform=#{MeetupsAround::CLI.input.zip_code.to_i}")
         doc = Nokogiri::HTML(html)
-binding.pry
-        @meetups = []
+        meetups = []
         @todays_date = 'Saturday, March 25'
         today = Time.new
 
-        if today.strftime('%A, %B %-d') != doc.search("li.date-indicator").first.text.strip
-            puts 'There are no more events today.'
-        else
-            # I should return all the instances of today's meetups.
-            puts "Today #{@todays_date} are the following meetups:"
-
-            meetup_1 = new
-            meetup_1.time = "2\:30PM"
-            meetup_1.group = 'Developer Launchpad Nashville'
-            meetup_1.event = 'Coding Jam'
-            meetup_1.attending = '19 Developers going'
-
-            meetup_2 = new
-            meetup_2.time = "9\:00AM"
-            meetup_2.group = 'Score Nashville Events, Networking and Workshops'
-            meetup_2.event = 'Join us for a "Start your Business" workshop!'
-            meetup_2.attending = '2 Members going'
-
-            meetup_3 = new
-            meetup_3.time = "10\:00AM"
-            meetup_3.group = 'Paid to Speak Entrepreneurs'
-            meetup_3.event = 'How To Get Your Speaking Career Started'
-            meetup_3.attending = '18 Members Going'
-
-            [meetup_1, meetup_2, meetup_3]
+        # if today.strftime('%A, %B %-d') != doc.search("li.date-indicator").first.text.strip
+        #     puts 'There are no more events today.'
+        # else
+        binding.pry
+          # doc.css("ul.event-listing-container").first.each do |row|
+          doc.css("ul.event-listing-container li.row.event-listing.clearfix.doc-padding").each do |row|
+            meetup = self.new
+            meetup.time = row.css("time").text
+            meetup.group = row.css("div.text--labelSecondary").text.strip
+            meetup.event = row.css("span").last.text.strip
+            meetup.attending = row.css("div.attendee-count").text.strip.gsub("\n", " ").gsub(/\s+/, ' ')
+            binding.pry
+            meetups << meetup
         end
+        meetups
+      # end
     end
 end
+
+### Nokogiri ###
+# iterator: doc.search("ul.event-listing-container li.row").first
+# time -
+# group -
+# event -
+# attending -
+# doc.css("ul.event-listing-container time").first.text
+# puts "Today #{@todays_date} are the following meetups:"
